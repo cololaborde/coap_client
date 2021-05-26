@@ -18,7 +18,7 @@ python client.py -p aaaa::c30c:0:0:3 1 /leds/blue
   ==>    make POST request to [aaaa::c30c:0:0:3]/leds/blue just one time
   
  
-python client.py -g aaaa::c30c:0:0:3 position 5
+python client.py -g aaaa::c30c:0:0:3 1 position 5
 
   ==>    make GET request to [aaaa::c30c:0:0:3]/position every 5 seconds
 
