@@ -4,7 +4,7 @@ Coap client using coapthon library to connect with z1 rest-server motes
 
 Parameters: 
 
-python client.py method [-g | -p] minimal_ipv6_server nodes_quantity endpoint [/endpoint | endpoint] timeinterval [seconds] (OPCIONAL)
+python client.py method [-g | -p] minimal_ipv6_server nodes_quantity endpoint [/endpoint | endpoint] timeinterval [seconds] (OPTIONAL)
 
 Use mode: 
 
