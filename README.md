@@ -1,4 +1,4 @@
-# python_client
+# Coap client
 
 Coap client using coapthon library to connect with z1 rest-server motes
 
