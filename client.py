@@ -13,7 +13,6 @@ def post(host,port,endpoint):
 		response = client.post(str(endpoint), None, None , None, 2)
 	except:
 		print('Not work')
-	
 	client.stop()
 	if response is not None:
 		return response.pretty_print()
@@ -27,7 +26,6 @@ def get(host,port,endpoint):
 		response = client.get(endpoint, timeout=2)
 	except:
 		print('Not work')
-	
 	client.stop()
 	if response is not None:
 		return response.payload
@@ -81,7 +79,7 @@ def saveLog(output, endpoint):
 	logfile.write(entry)
 
 
-#Debe haber al menos 3 parametros (metodo, ipv6, endpoint)
+#Debe haber al menos 4 parametros (metodo, ipv6, cantidad de nodos, endpoint)
 if len(sys.argv) < 5:
 	print('Parametros: (-g | -p) server_ipv6_minima cantNodos endpoint timeinterval(OPCIONAL)')
 	exit(0)
