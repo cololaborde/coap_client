@@ -20,9 +20,11 @@ cant_nodos = sys.argv[4]
 """ 
 Se podria haber resuelto tambien leyendo del logfile que genera el cliente
 y que quede mas prolija la obtencion de datos, pero lo implemente asi para ajustarme al enunciado
+
 4) Escribir un programa que lea mediante su cliente COAP 
 el valor del sensor de temperatura de las mota cada 10 segundos 
 y lo inserte en la base de datos creada anteriormente.
+
 Hay un par de cuestiones que podrian haberse resuelto de una mejor forma,
 pero involucraba hacer cambios en el cliente ya entregado.
 """
