@@ -78,6 +78,17 @@ def saveLog(output, endpoint):
 	entry = str(datetime.now()) + "\n\n" + 'REQUEST: ' + str(method)+ ' ' + str(endpoint) + "\n" + str(output) + '\n' + '--------------' + "\n"
 	logfile.write(entry)
 
+def make_requests(cantNodos, last_number, host,endpoint):
+	for i in range(int(cantNodos)):
+		if(i + last_number >= 10):
+			host = ip_minima[:-1] + str(hex(i + last_number)[-1])
+		else:
+			host = ip_minima[:-1] + str(i + last_number)
+		print(host)
+		output = method(host,port,endpoint)
+		saveLog(output, endpoint)
+		print(output)
+
 
 #Debe haber al menos 4 parametros (metodo, ipv6, cantidad de nodos, endpoint)
 if len(sys.argv) < 5:
@@ -94,27 +105,11 @@ method, ip_minima, cantNodos, endpoint, timeinterval = obtenerParametros()
 last_number = int(ip_minima.split(':')[len(ip_minima.split(':')) -1])
 
 if timeinterval == 0:
-	for i in range(int(cantNodos)):
-		if(i + last_number >= 10):
-			host = ip_minima[:-1] + str(hex(i + last_number)[-1])
-		else:
-			host = ip_minima[:-1] + str(i + last_number)
-		print(host)
-		output = method(host,port,endpoint)
-		saveLog(output, endpoint)
-		print(output)
+	make_requests(cantNodos,last_number,host,endpoint)
 else:
 	try:
 		while True:
-			for i in range(int(cantNodos)):
-				if(i + last_number >= 10):
-					host = ip_minima[:-1] + str(hex(i + last_number)[-1])
-				else:
-					host = ip_minima[:-1] + str(i + last_number)
-				print(host)
-				output = method(host,port,endpoint)
-				saveLog(output, endpoint)
-				print(output)
+			make_requests(cantNodos,last_number,host,endpoint)
 			time.sleep(timeinterval)
 	except KeyboardInterrupt:
 		print('Saliendo...')
